@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace teorie_incapsulare
@@ -8,7 +9,7 @@ namespace teorie_incapsulare
     {
         static void Main(string[] args)
         {
-            Useri();
+            Carte();
         }
 
         public static void Useri()
@@ -135,5 +136,162 @@ namespace teorie_incapsulare
 
             }
         }
+
+
+
+        public static void Car()
+        {
+            Car c1 = new Car();
+            c1.color = "white";
+            c1.size = "big";
+            c1.yearofproduction = 2000;
+            c1.horsepower = 570;
+            c1.damaged = true;
+
+            Car c2 = new Car();
+            c2.color = "black";
+            c2.size = "big";
+            c2.yearofproduction = 2010;
+            c2.horsepower = 600;
+            c2.damaged = true;
+
+            Car c3 = new Car();
+            c3.color = "yellow";
+            c3.size = "small";
+            c3.yearofproduction = 2012;
+            c3.horsepower = 620;
+            c3.damaged = false;
+       
+            Car c4 = new Car();
+            c4.color = "white";
+            c4.size = "big";
+            c4.yearofproduction = 2000;
+            c4.horsepower = 520;
+            c4.damaged = false;
+
+            Car c5 = new Car();
+            c5.color = "green";
+            c5.size = "big";
+            c5.yearofproduction = 2020;
+            c5.horsepower = 580;
+            c5.damaged = true;
+
+
+            List<Car> cars = new List<Car>();
+
+            cars.Add(c1);
+            cars.Add(c2);
+            cars.Add(c3);
+            cars.Add(c4);
+            cars.Add(c5);
+
+            for(int i = 0; i < cars.Count; i++)
+            {
+                Console.WriteLine(cars[i].Descriere());
+            }
+        }
+
+
+        public static void Carte()
+        {
+            Carte ca1 = new Carte();
+            ca1.autor = "Tatiana Tibuleac";
+            ca1.titlu = "Vara in care mama a avut ochii verzi";
+            ca1.anAparitie = 2016;
+            ca1.pret = 45; // int
+            ca1.disponibila = "Da"; // string
+           
+
+            Carte ca2 = new Carte();
+            ca2.autor = "Mihai Eminescu";
+            ca2.titlu = "Poezii";
+            ca2.anAparitie = 1883;
+            ca2.pret = 35;
+            ca2.disponibila = "Da";
+           
+
+            Carte ca3 = new Carte();
+            ca3.autor = "Ion Creanga";
+            ca3.titlu = "Amintiri din copilarie";
+            ca3.anAparitie = 1892;
+            ca3.pret = 25;
+            ca3.disponibila = "Nu";
+           
+
+            Carte ca4 = new Carte();
+            ca4.autor = "Liviu Rebreanu";
+            ca4.titlu = "Ion";
+            ca4.anAparitie = 1920;
+            ca4.pret = 40;
+            ca4.disponibila = "Da";
+         
+
+            Carte ca5 = new Carte();
+            ca5.autor = "Mircea Eliade";
+            ca5.titlu = "Maitreyi";
+            ca5.anAparitie = 1933;
+            ca5.pret = 38;
+            ca5.disponibila = "Da";
+           
+
+            Carte ca6 = new Carte();
+            ca6.autor = "George Orwell";
+            ca6.titlu = "1984";
+            ca6.anAparitie = 1949;
+            ca6.pret = 42;
+            ca6.disponibila = "Nu";
+            
+
+            Carte ca7 = new Carte();
+            ca7.autor = "Antoine de Saint-Exupery";
+            ca7.titlu = "Micul Print";
+            ca7.anAparitie = 1943;
+            ca7.pret = 30;
+            ca7.disponibila = "Da";
+
+            Carte ca8 = new Carte();
+            ca8.autor = "Gabriel Garcia Marquez";
+            ca8.titlu = "Un veac de singuratate";
+            ca8.anAparitie = 1967;
+            ca8.pret = 55;
+            ca8.disponibila = "Da";
+
+            Carte ca9 = new Carte();
+            ca9.autor = "Marin Preda";
+            ca9.titlu = "Morometii";
+            ca9.anAparitie = 1955;
+            ca9.pret = 48;
+            ca9.disponibila = "Nu";
+
+            Carte ca10 = new Carte();
+            ca10.autor = "Fiodor Dostoievski";
+            ca10.titlu = "Crima si pedeapsa";
+            ca10.anAparitie = 1866;
+            ca10.pret = 60;
+            ca10.disponibila = "Da";
+
+            List<Carte> carti = new List<Carte>();
+
+            carti.Add(ca1);
+            carti.Add(ca2);
+            carti.Add(ca3);
+            carti.Add(ca4);
+            carti.Add(ca5);
+            carti.Add(ca6);
+            carti.Add(ca7);
+            carti.Add(ca8);
+            carti.Add(ca9);
+            carti.Add(ca10);
+
+            for(int i = 0; i < carti.Count; i++)
+            {
+                Console.WriteLine(carti[i].Descriere());
+            }
+
+            Console.WriteLine(ca1.AnideDeLaAparitie());
+        }
+
     }
+
+
 }
