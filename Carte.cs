@@ -10,8 +10,8 @@ namespace teorie_incapsulare
     {
         public string titlu;
 
-        
-        public string autor; 
+       
+        public Autor autor;
         public int anAparitie;
         public int pret;
         public string disponibila;
@@ -22,12 +22,15 @@ namespace teorie_incapsulare
         {
             string text = "";
             text += "Ttitlu " + titlu + "\n";
-            text += "Autor " + autor + "\n";
-            text += "An aparitie " + anAparitie + "\n";
-            text += "Pret " + pret + "\n";
-            text += "Disponibila " + disponibila + "\n";
-            text += "Ani de la aparitie " + AnideDeLaAparitie() + "\n";
-            text += "Pret dupa reducere " + reducere(20);
+            text += "Autor " + autor.nume + "\n";
+            text += "An nastere " + autor.anNastere + "\n";
+            text += "Tara " + autor.tara + "\n";
+           // text += "An aparitie " + anAparitie + "\n";
+            text += "Pret " + pret +" lei"+" \n";
+          //  text += "Disponibila " + disponibila + "\n";
+           // text += "Ani de la aparitie " + AnideDeLaAparitie() + "\n";
+           // text += "Pret dupa reducere " + reducere(20);
+            
              
 
             return text;

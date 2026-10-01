@@ -13,15 +13,30 @@ namespace teorie_incapsulare
         {
             // Useri();
             //Car();
-            //Carte();
+             //Carte();
             //Elev();
             //carte();
             // elev();
             //carteEx15();
             // Autor();
             //imprumut();
+            Biblioteca();
         }
+        public static void Biblioteca()
+        {
 
+            Biblioteca b=new Biblioteca();
+            b.Load();
+            b.afisareCartiBiblioteca();
+            Console.WriteLine(b.CateSubMedie()+" carti sub medie"); 
+
+
+
+
+
+
+
+        }
         public static void Useri()
         {
             User x = new User();
@@ -205,112 +220,142 @@ namespace teorie_incapsulare
 
         public static void Carte()
         {
-            Carte ca1 = new Carte();
-            ca1.autor = "Tatiana Țîbuleac";
-            ca1.titlu = "Vara in care mama a avut ochii verzi";
-            ca1.anAparitie = 2016;
-            ca1.pret = 45; // int
-            ca1.disponibila = "Da"; // string
+             
+            Carte carte1 = new Carte();
+            carte1.titlu = "Amintiri din copilarie";
+            carte1.anAparitie = 1892;
+            carte1.pret = 25;
+            carte1.disponibila = "Da";
+            carte1.autor = new Autor();
+            carte1.autor.nume = "Ion Creanga";
+            carte1.autor.anNastere = 1837;
+            carte1.autor.tara = "Romania";
 
+            
+            Carte carte2 = new Carte();
+            carte2.titlu = "Poezii";
+            carte2.anAparitie = 1883;
+            carte2.pret = 30;
+            carte2.disponibila = "Da";
+            carte2.autor = new Autor();
+            carte2.autor.nume = "Mihai Eminescu";
+            carte2.autor.anNastere = 1850;
+            carte2.autor.tara = "Romania";
 
+             
+            Carte carte3 = new Carte();
+            carte3.titlu = "Baltagul";
+            carte3.anAparitie = 1930;
+            carte3.pret = 22;
+            carte3.disponibila = "Nu";
+            carte3.autor = new Autor();
+            carte3.autor.nume = "Mihail Sadoveanu";
+            carte3.autor.anNastere = 1880;
+            carte3.autor.tara = "Romania";
 
+            
+            Carte carte4 = new Carte();
+            carte4.titlu = "Enigma Otiliei";
+            carte4.anAparitie = 1938;
+            carte4.pret = 35;
+            carte4.disponibila = "Da";
+            carte4.autor = new Autor();
+            carte4.autor.nume = "George Calinescu";
+            carte4.autor.anNastere = 1899;
+            carte4.autor.tara = "Romania";
 
-            Carte ca2 = new Carte();
-            ca2.autor = "Mihai Eminescu";
-            ca2.titlu = "Poezii";
-            ca2.anAparitie = 1883;
-            ca2.pret = 35;
-            ca2.disponibila = "Da";
+             
+            Carte carte5 = new Carte();
+            carte5.titlu = "Ion";
+            carte5.anAparitie = 1920;
+            carte5.pret = 28;
+            carte5.disponibila = "Da";
+            carte5.autor = new Autor();
+            carte5.autor.nume = "Liviu Rebreanu";
+            carte5.autor.anNastere = 1885;
+            carte5.autor.tara = "Romania";
 
+             
+            Carte carte6 = new Carte();
+            carte6.titlu = "Maitreyi";
+            carte6.anAparitie = 1933;
+            carte6.pret = 40;
+            carte6.disponibila = "Nu";
+            carte6.autor = new Autor();
+            carte6.autor.nume = "Mircea Eliade";
+            carte6.autor.anNastere = 1907;
+            carte6.autor.tara = "Romania";
 
+             
+            Carte carte7 = new Carte();
+            carte7.titlu = "Morometii";
+            carte7.anAparitie = 1955;
+            carte7.pret = 45;
+            carte7.disponibila = "Da";
+            carte7.autor = new Autor();
+            carte7.autor.nume = "Marin Preda";
+            carte7.autor.anNastere = 1922;
+            carte7.autor.tara = "Romania";
 
-            Carte ca3 = new Carte();
-            ca3.autor = "Ion Creanga";
-            ca3.titlu = "Amintiri din copilarie";
-            ca3.anAparitie = 1892;
-            ca3.pret = 25;
-            ca3.disponibila = "Nu";
+             
+            Carte carte8 = new Carte();
+            carte8.titlu = "Hamlet";
+            carte8.anAparitie = 1603;
+            carte8.pret = 50;
+            carte8.disponibila = "Da";
+            carte8.autor = new Autor();
+            carte8.autor.nume = "William Shakespeare";
+            carte8.autor.anNastere = 1564;
+            carte8.autor.tara = "Marea Britanie";
 
+             
+            Carte carte9 = new Carte();
+            carte9.titlu = "Crima si pedeapsa";
+            carte9.anAparitie = 1866;
+            carte9.pret = 55;
+            carte9.disponibila = "Nu";
+            carte9.autor = new Autor();
+            carte9.autor.nume = "Fyodor Dostoevsky";
+            carte9.autor.anNastere = 1821;
+            carte9.autor.tara = "Rusia";
 
-            Carte ca4 = new Carte();
-            ca4.autor = "Liviu Rebreanu";
-            ca4.titlu = "Ion";
-            ca4.anAparitie = 1920;
-            ca4.pret = 40;
-            ca4.disponibila = "Da";
+            
+            Carte carte10 = new Carte();
+            carte10.titlu = "Marele Gatsby";
+            carte10.anAparitie = 1925;
+            carte10.pret = 38;
+            carte10.disponibila = "Da";
+            carte10.autor = new Autor();
+            carte10.autor.nume = "F. Scott Fitzgerald";
+            carte10.autor.anNastere = 1896;
+            carte10.autor.tara = "SUA";
 
-
-            Carte ca5 = new Carte();
-            ca5.autor = "Mircea Eliade";
-            ca5.titlu = "Maitreyi";
-            ca5.anAparitie = 1933;
-            ca5.pret = 38;
-            ca5.disponibila = "Da";
-
-
-            Carte ca6 = new Carte();
-            ca6.autor = "George Orwell";
-            ca6.titlu = "1984";
-            ca6.anAparitie = 1949;
-            ca6.pret = 42;
-            ca6.disponibila = "Nu";
-
-
-            Carte ca7 = new Carte();
-            ca7.autor = "Antoine de Saint-Exupery";
-            ca7.titlu = "Micul Print";
-            ca7.anAparitie = 1943;
-            ca7.pret = 30;
-            ca7.disponibila = "Da";
-
-            Carte ca8 = new Carte();
-            ca8.autor = "Gabriel Garcia Marquez";
-            ca8.titlu = "Un veac de singuratate";
-            ca8.anAparitie = 1967;
-            ca8.pret = 55;
-            ca8.disponibila = "Da";
-
-            Carte ca9 = new Carte();
-            ca9.autor = "Marin Preda";
-            ca9.titlu = "Morometii";
-            ca9.anAparitie = 1955;
-            ca9.pret = 48;
-            ca9.disponibila = "Nu";
-
-            Carte ca10 = new Carte();
-            ca10.autor = "Fiodor Dostoievski";
-            ca10.titlu = "Crima si pedeapsa";
-            ca10.anAparitie = 1866;
-            ca10.pret = 60;
-            ca10.disponibila = "Da";
 
             List<Carte> carti = new List<Carte>();
 
-            carti.Add(ca1);
-            carti.Add(ca2);
-            carti.Add(ca3);
-            carti.Add(ca4);
-            carti.Add(ca5);
-            carti.Add(ca6);
-            carti.Add(ca7);
-            carti.Add(ca8);
-            carti.Add(ca9);
-            carti.Add(ca10);
-
-            for (int i = 0; i < carti.Count; i++)
-            {
-                Console.WriteLine(carti[i].DescriereCarte());
-
-                carti[i].ieftinire(24);
-                Console.WriteLine("Veche? " + carti[i].veche());
-
-                Console.WriteLine();
-
-            }
+            carti.Add(carte1);
+            carti.Add(carte2);
+            carti.Add(carte3);
+            carti.Add(carte4);
+            carti.Add(carte5);
+            carti.Add(carte6);
+            carti.Add(carte7);
+            carti.Add(carte8);
+            carti.Add(carte9);
+            carti.Add(carte10);
 
 
+           
+            Biblioteca biblioteca = new Biblioteca();
+            biblioteca.nume = "Biblioteca";
+            biblioteca.carti = carti;
 
 
+            Carte c = biblioteca.CeaMaiScumpaCarte();
+            Carte c2 = biblioteca.ceaMaiVeche();
+
+            Console.WriteLine(c.DescriereCarte());
+            Console.WriteLine(c2.DescriereCarte());
 
         }
 
@@ -414,82 +459,128 @@ namespace teorie_incapsulare
         //ex 8
         public static void carte()
         {
-            Carte ca1 = new Carte();
-            ca1.autor = "Tatiana Tibuleac";
-            ca1.titlu = "Vara in care mama a avut ochii verzi";
-            ca1.anAparitie = 2016;
-            ca1.pret = 45; // int
-            ca1.disponibila = "Da"; // string
+            Carte carte1 = new Carte();
+            carte1.titlu = "Amintiri din copilarie";
+            carte1.anAparitie = 1892;
+            carte1.pret = 25;
+            carte1.disponibila = "Da";
+            carte1.autor = new Autor();
+            carte1.autor.nume = "Ion Creanga";
+            carte1.autor.anNastere = 1837;
+            carte1.autor.tara = "Romania";
 
 
+            Carte carte2 = new Carte();
+            carte2.titlu = "Poezii";
+            carte2.anAparitie = 1883;
+            carte2.pret = 30;
+            carte2.disponibila = "Da";
+            carte2.autor = new Autor();
+            carte2.autor.nume = "Mihai Eminescu";
+            carte2.autor.anNastere = 1850;
+            carte2.autor.tara = "Romania";
 
 
-            Carte ca2 = new Carte();
-            ca2.autor = "Mihai Eminescu";
-            ca2.titlu = "Poezii";
-            ca2.anAparitie = 1883;
-            ca2.pret = 35;
-            ca2.disponibila = "Da";
+            Carte carte3 = new Carte();
+            carte3.titlu = "Baltagul";
+            carte3.anAparitie = 1930;
+            carte3.pret = 22;
+            carte3.disponibila = "Nu";
+            carte3.autor = new Autor();
+            carte3.autor.nume = "Mihail Sadoveanu";
+            carte3.autor.anNastere = 1880;
+            carte3.autor.tara = "Romania";
 
 
-
-            Carte ca3 = new Carte();
-            ca3.autor = "Ion Creanga";
-            ca3.titlu = "Amintiri din copilarie";
-            ca3.anAparitie = 1892;
-            ca3.pret = 25;
-            ca3.disponibila = "Nu";
-
-
-            Carte ca4 = new Carte();
-            ca4.autor = "Liviu Rebreanu";
-            ca4.titlu = "Ion";
-            ca4.anAparitie = 1920;
-            ca4.pret = 40;
-            ca4.disponibila = "Da";
+            Carte carte4 = new Carte();
+            carte4.titlu = "Enigma Otiliei";
+            carte4.anAparitie = 1938;
+            carte4.pret = 35;
+            carte4.disponibila = "Da";
+            carte4.autor = new Autor();
+            carte4.autor.nume = "George Calinescu";
+            carte4.autor.anNastere = 1899;
+            carte4.autor.tara = "Romania";
 
 
-            Carte ca5 = new Carte();
-            ca5.autor = "Mircea Eliade";
-            ca5.titlu = "Maitreyi";
-            ca5.anAparitie = 1933;
-            ca5.pret = 38;
-            ca5.disponibila = "Da";
+            Carte carte5 = new Carte();
+            carte5.titlu = "Ion";
+            carte5.anAparitie = 1920;
+            carte5.pret = 28;
+            carte5.disponibila = "Da";
+            carte5.autor = new Autor();
+            carte5.autor.nume = "Liviu Rebreanu";
+            carte5.autor.anNastere = 1885;
+            carte5.autor.tara = "Romania";
 
 
-            Carte ca6 = new Carte();
-            ca6.autor = "George Orwell";
-            ca6.titlu = "1984";
-            ca6.anAparitie = 1949;
-            ca6.pret = 42;
-            ca6.disponibila = "Nu";
+            Carte carte6 = new Carte();
+            carte6.titlu = "Maitreyi";
+            carte6.anAparitie = 1933;
+            carte6.pret = 40;
+            carte6.disponibila = "Nu";
+            carte6.autor = new Autor();
+            carte6.autor.nume = "Mircea Eliade";
+            carte6.autor.anNastere = 1907;
+            carte6.autor.tara = "Romania";
 
 
-            Carte ca7 = new Carte();
-            ca7.autor = "Antoine de Saint-Exupery";
-            ca7.titlu = "Micul Print";
-            ca7.anAparitie = 1943;
-            ca7.pret = 30;
-            ca7.disponibila = "Da";
+            Carte carte7 = new Carte();
+            carte7.titlu = "Morometii";
+            carte7.anAparitie = 1955;
+            carte7.pret = 45;
+            carte7.disponibila = "Da";
+            carte7.autor = new Autor();
+            carte7.autor.nume = "Marin Preda";
+            carte7.autor.anNastere = 1922;
+            carte7.autor.tara = "Romania";
 
-            Carte ca8 = new Carte();
-            ca8.autor = "Gabriel Garcia Marquez";
-            ca8.titlu = "Un veac de singuratate";
-            ca8.anAparitie = 1967;
-            ca8.pret = 55;
-            ca8.disponibila = "Da";
 
+            Carte carte8 = new Carte();
+            carte8.titlu = "Hamlet";
+            carte8.anAparitie = 1603;
+            carte8.pret = 50;
+            carte8.disponibila = "Da";
+            carte8.autor = new Autor();
+            carte8.autor.nume = "William Shakespeare";
+            carte8.autor.anNastere = 1564;
+            carte8.autor.tara = "Marea Britanie";
+
+
+            Carte carte9 = new Carte();
+            carte9.titlu = "Crima si pedeapsa";
+            carte9.anAparitie = 1866;
+            carte9.pret = 55;
+            carte9.disponibila = "Nu";
+            carte9.autor = new Autor();
+            carte9.autor.nume = "Fyodor Dostoevsky";
+            carte9.autor.anNastere = 1821;
+            carte9.autor.tara = "Rusia";
+
+
+            Carte carte10 = new Carte();
+            carte10.titlu = "Marele Gatsby";
+            carte10.anAparitie = 1925;
+            carte10.pret = 38;
+            carte10.disponibila = "Da";
+            carte10.autor = new Autor();
+            carte10.autor.nume = "F. Scott Fitzgerald";
+            carte10.autor.anNastere = 1896;
+            carte10.autor.tara = "SUA";
 
             List<Carte> carti2 = new List<Carte>();
 
-            carti2.Add(ca1);
-            carti2.Add(ca2);
-            carti2.Add(ca3);
-            carti2.Add(ca4);
-            carti2.Add(ca5);
-            carti2.Add(ca6);
-            carti2.Add(ca7);
-            carti2.Add(ca8);
+            carti2.Add(carte1);
+            carti2.Add(carte2);
+            carti2.Add(carte3);
+            carti2.Add(carte4);
+            carti2.Add(carte5);
+            carti2.Add(carte6);
+            carti2.Add(carte7);
+            carti2.Add(carte8);
+            carti2.Add(carte9);
+            carti2.Add(carte10);
+
             Console.WriteLine("----------TOATE CARTILE--------");
             for (int i = 0; i < carti2.Count; i++)
             {
@@ -598,12 +689,13 @@ namespace teorie_incapsulare
 
         }
         //Ex 12
+        //"Ana are mere"  si "Ana nu are "
         public int NumaraCartiAutor(List<Carte> lista, string autor)
         {
             int ct = 0;
             for (int i = 0; i < lista.Count; i++)
             {
-                if (lista[i].autor == autor)
+                if (lista[i].autor.nume.Equals(autor))
                 {
                     ct++;
                 }
@@ -615,7 +707,7 @@ namespace teorie_incapsulare
             List<Carte> CartiGasite = new List<Carte>();
             for (int i = 0; i < lista.Count; i++)
             {
-                if (lista[i].autor == autor)
+                if (lista[i].autor.nume.Equals( autor))
                 {
                     CartiGasite.Add(lista[i]);
                 }
@@ -752,18 +844,81 @@ namespace teorie_incapsulare
             // În C++ cu obiect pe stivă s-ar fi făcut o copie în fiecare listă, deci schimbarea din prima listă nu s - ar fi văzut în a doua.
         }
         //Ex 16
-        //public static void Autor()
-        // {
-        // Autor a1 = new Autor();
-        /// a1.nume="Mircea Eliade";
-        // a1.anNastere = 1907;
-        // a1.tara = "Romania";
+        public static void Autor()
+         {
+             
+            Autor a1 = new Autor();
+            a1.nume = "Mihai Eminescu";
+            a1.anNastere = 1850;
+            a1.tara = "Romania";
+             
 
-        // List<Autor> autori = new List<Autor>();
-        // autori.Add(a1);
-        //Console.WriteLine(a1.DescriereAutor());
-        // }
-        // }
+             
+            Autor a2 = new Autor();
+            a2.nume = "Ion Creanga";
+            a2.anNastere = 1837;
+            a2.tara = "Romania";
+             
+             
+            Autor a3 = new Autor();
+            a3.nume = "Mircea Eliade";
+            a3.anNastere = 1907;
+            a3.tara = "Romania";
+            
+
+            
+            Autor a4 = new Autor();
+            a4.nume = "Liviu Rebreanu";
+            a4.anNastere = 1885;
+            a4.tara = "Romania";
+             
+            Autor a5 = new Autor();
+            a5.nume = "George Bacovia";
+            a5.anNastere = 1881;
+            a5.tara = "Romania";
+            
+            Autor a6 = new Autor();
+            a6.nume = "William Shakespeare";
+            a6.anNastere = 1564;
+            a6.tara = "Marea Britanie";
+             
+            Autor a7 = new Autor();
+            a7.nume = "Fyodor Dostoevsky";
+            a7.anNastere = 1821;
+            a7.tara = "Rusia";
+            
+            Autor a8 = new Autor();
+            a8.nume = "J.K. Rowling";
+            a8.anNastere = 1965;
+            a8.tara = "Marea Britanie";
+             
+            Autor a9 = new Autor();
+            a9.nume = "Stephen King";
+            a9.anNastere = 1947;
+            a9.tara = "SUA";
+             
+            Autor a10 = new Autor();
+            a10.nume = "Franz Kafka";
+            a10.anNastere = 1883;
+            a10.tara = "Cehia";
+             
+
+            List<Autor> autori = new List<Autor>();
+
+            autori.Add(a1);
+            autori.Add(a2);
+            autori.Add(a3);
+            autori.Add(a4);
+            autori.Add(a5);
+            autori.Add(a6);
+            autori.Add(a7);
+            autori.Add(a8);
+            autori.Add(a9);
+            autori.Add(a10);
+
+             
+         }
+        
 
 
         //Ex 18
