@@ -9,18 +9,28 @@ namespace teorie_incapsulare
 {
     internal class App
     {
+        //constructorii 
+        // sunt functii ce se apeleaza automat la crearea unui obiect
+        // au acelasi nume ca si clasa
+        // se pot supraincarca
+        // nu au tip returnat
         static void Main(string[] args)
         {
-            // Useri();
-            //Car();
-             //Carte();
-            //Elev();
-            //carte();
-            // elev();
-            //carteEx15();
-            // Autor();
-            //imprumut();
-            Biblioteca();
+            try
+            {
+                Music melodie1 = new Music("Bohemian Rhapsody", "Queen", MusicGenre.Rock, 355, 1975, true, 150);
+
+
+                Console.WriteLine(melodie1.PlayCount);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+             
+
+
         }
         public static void Biblioteca()
         {
