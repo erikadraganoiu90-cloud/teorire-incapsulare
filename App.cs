@@ -21,6 +21,8 @@ namespace teorie_incapsulare
                 Music melodie1 = new Music("Bohemian Rhapsody", "Queen", MusicGenre.Rock, 355, 1975, true, 150);
 
 
+                //Console.WriteLine(melodie1.PlayCount);
+                melodie1.Play();
                 Console.WriteLine(melodie1.PlayCount);
 
             }
