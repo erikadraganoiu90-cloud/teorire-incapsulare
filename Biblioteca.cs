@@ -10,8 +10,8 @@ namespace teorie_incapsulare
         public List<Carte> carti = new List<Carte>();
 
 
-        public  void Load()
-           
+        public void Load()
+
         {
             Carte carte1 = new Carte();
             carte1.titlu = "Amintiri din copilarie";
@@ -122,7 +122,25 @@ namespace teorie_incapsulare
             carte10.autor.anNastere = 1896;
             carte10.autor.tara = "SUA";
 
+            Carte carte11 = new Carte();
+            carte11.titlu = "Luceafarul";
+            carte11.anAparitie = 1883;
+            carte11.pret = 32;
+            carte11.disponibila = "Da";
+            carte11.autor = new Autor();
+            carte11.autor.nume = "Mihai Eminescu";
+            carte11.autor.anNastere = 1850;
+            carte11.autor.tara = "Romania";
 
+            Carte carte12 = new Carte();
+            carte12.titlu = "Scrisoarea III";
+            carte12.anAparitie = 1881;
+            carte12.pret = 28;
+            carte11.disponibila = "Da";
+            carte12.autor = new Autor();
+            carte12.autor.nume = "Mihai Eminescu";
+            carte12.autor.anNastere = 1850;
+            carte12.autor.tara = "Romania";
 
             carti.Add(carte1);
             carti.Add(carte2);
@@ -134,9 +152,18 @@ namespace teorie_incapsulare
             carti.Add(carte8);
             carti.Add(carte9);
             carti.Add(carte10);
+            carti.Add(carte11);
+            carti.Add(carte12);
 
-
-
+            imprumut i1 = new imprumut();
+            i1.nume = "Maria"; i1.carte = "Ion"; i1.nrZile = 20;
+            imprumut i2 = new imprumut();
+            i2.nume = "Andrei"; i2.carte = "Hamlet"; i2.nrZile = 10;
+            imprumut i3 = new imprumut();
+            i3.nume = "Dana"; i3.carte = "Baltagul"; i3.nrZile = 30;
+            imprumuturi.Add(i1);
+            imprumuturi.Add(i2);
+            imprumuturi.Add(i3);
         }
 
 
@@ -152,7 +179,7 @@ namespace teorie_incapsulare
                 {
                     cartePretMaxim = carti[i];
                 }
-              
+
             }
 
             return cartePretMaxim;
@@ -173,7 +200,7 @@ namespace teorie_incapsulare
         public Carte ceaMaiVeche()
         {
             Carte anMinim = carti[0];
-            for(int i=1;i<carti.Count;i++)
+            for (int i = 1; i < carti.Count; i++)
             {
                 if (carti[i].anAparitie < anMinim.anAparitie)
                 {
@@ -185,20 +212,20 @@ namespace teorie_incapsulare
 
         public double pretMediu()
         {
-             int  suma = 0;
-            for(int i = 0; i < carti.Count; i++)
+            int suma = 0;
+            for (int i = 0; i < carti.Count; i++)
             {
-                suma = suma+carti[i].pret;
+                suma = suma + carti[i].pret;
             }
-             
-            return suma/carti.Count;
+
+            return suma / carti.Count;
         }
 
 
         public int CateSubMedie()
         {
             int ct = 0;
-            for(int i = 0; i < carti.Count; i++)
+            for (int i = 0; i < carti.Count; i++)
             {
                 if (carti[i].pret < pretMediu())
                 {
@@ -210,7 +237,113 @@ namespace teorie_incapsulare
         }
 
 
+     
+    public List<imprumut> imprumuturi = new List<imprumut>();
+
+        // 1. Cauta o carte dupa titlu
+        public Carte CautaDupaTitlu(string titlu)
+        {
+            for (int i = 0; i < carti.Count; i++)
+            {
+                if (carti[i].titlu == titlu)
+                {
+                    return carti[i];
+                }
+            }
+            return null;
+        }
+
+        // 2. Toate cartile unui autor
+        public List<Carte> CartileAutorului(string numeAutor)
+        {
+            List<Carte> lista = new List<Carte>();
+            for (int i = 0; i < carti.Count; i++)
+            {
+                if (carti[i].autor.nume == numeAutor)
+                {
+                    lista.Add(carti[i]);
+                }
+            }
+            return lista;
+        }
+
+        // 3. Imprumutul schimba starea cartii
+        public bool Imprumuta(string titlu)
+        {
+            for (int i = 0; i < carti.Count; i++)
+            {
+                if (carti[i].titlu == titlu)
+                {
+                    if (carti[i].disponibila == "Da")
+                    {
+                        carti[i].disponibila = "Nu";
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // 4. Cate carti are fiecare tara
+        public void AfiseazaCartiPeTari()
+        {
+            List<string> tari = new List<string>();
+            for (int i = 0; i < carti.Count; i++)
+            {
+                string t = carti[i].autor.tara;
+                bool exista = false;
+                for (int j = 0; j < tari.Count; j++)
+                {
+                    if (tari[j] == t) { 
+                        exista = true; 
+                    }
+                }
+                if (exista == false) { 
+                    tari.Add(t);
+                }
+            }
+
+            for (int i = 0; i < tari.Count; i++)
+            {
+                int ct = 0;
+                for (int j = 0; j < carti.Count; j++)
+                {
+                    if (carti[j].autor.tara == tari[i]) {
+                        ct++;
+                    }
+                }
+                Console.WriteLine(tari[i] + " " + ct);
+            }
+        }
+
+        // 5a. Total penalizari
+        public int TotalPenalizari()
+        {
+            int suma = 0;
+            for (int i = 0; i < imprumuturi.Count; i++)
+            {
+                suma = suma + imprumuturi[i].penalizare();
+            }
+            return suma;
+        }
+
+        // 5b. Imprumutul cu cea mai mare intarziere
+        public imprumut CelMaiIntarziat()
+        {
+            imprumut maxim = imprumuturi[0];
+            for (int i = 1; i < imprumuturi.Count; i++)
+            {
+                if (imprumuturi[i].nrZile > maxim.nrZile)
+                {
+                    maxim = imprumuturi[i];
+                }
+            }
+            return maxim;
+        }
+
     }
-
-
 }

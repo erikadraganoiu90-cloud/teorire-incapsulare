@@ -25,8 +25,61 @@ namespace teorie_incapsulare
         public static void Biblioteca()
         {
 
-            Biblioteca b=new Biblioteca();
+            Biblioteca b = new Biblioteca();
             b.Load();
+            //1
+            Console.WriteLine("-----------CAUTA O CARTE DUPA TITLU----------");
+            Carte gasita = b.CautaDupaTitlu("Baltagul");
+            if (gasita == null)
+            {
+                Console.WriteLine("nu exista" + "\n");
+            }
+            else
+            {
+                Console.WriteLine(gasita.titlu + " , " + gasita.autor.nume + " , " + gasita.pret + " lei" + "\n");
+            }
+            Carte gasita2 = b.CautaDupaTitlu("Dune");
+            if (gasita2 == null)
+            {
+                Console.WriteLine("nu exista" + "\n");
+            }
+            else {Console.WriteLine(gasita2.titlu + " , " + gasita.autor.nume + " , " + gasita.pret + " lei" + "\n");
+         
+            }
+
+            //2
+            Console.WriteLine("-----------TOATE CARTILE UNUI AUTOR----------");
+            List<Carte> le = b.CartileAutorului("Mihai Eminescu");
+            Console.WriteLine(le.Count + " carti");
+            for (int i = 0; i < le.Count; i++)
+            {
+                Console.WriteLine(le[i].titlu);
+            }
+            Console.WriteLine();
+
+            //3  
+            Console.WriteLine("-----------IMPRUMUTUL SCHIMBA STAREA CARTII-----------");
+            Console.WriteLine(b.Imprumuta("Ion"));
+            Console.WriteLine(b.Imprumuta("Ion"));
+            Console.WriteLine(b.Imprumuta("Baltagul"));
+            Console.WriteLine(b.Imprumuta("Dune"));
+            Console.WriteLine();
+
+            //4
+            Console.WriteLine("-------------CATE CARTI ARE FIECARE TARA------------");
+            b.AfiseazaCartiPeTari();
+            Console.WriteLine();
+
+            //5
+            Console.WriteLine("-----------IMPRUMUTURILE BIBLIOTECAII------------");
+            Console.WriteLine("total penalizari -> " + b.TotalPenalizari());
+            imprumut m = b.CelMaiIntarziat();
+            Console.WriteLine("cel mai intarziat -> " + m.nume + " - " + m.carte + " - " + m.nrZile + " zile");
+            Console.WriteLine();
+
+
+
+            Console.WriteLine("-----------BIBLIOTECA-----------");
             b.afisareCartiBiblioteca();
             Console.WriteLine(b.CateSubMedie()+" carti sub medie"); 
 
