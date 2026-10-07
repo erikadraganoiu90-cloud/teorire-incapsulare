@@ -8,6 +8,13 @@ namespace teorie_incapsulare
     {
         public string nume;
         public List<Carte> carti = new List<Carte>();
+        public List<imprumut> imprumuturi = new List<imprumut>();
+
+
+        public Biblioteca() { 
+        
+            Load();
+        }
 
 
         public void Load()
@@ -238,7 +245,7 @@ namespace teorie_incapsulare
 
 
      
-    public List<imprumut> imprumuturi = new List<imprumut>();
+   
 
         // 1. Cauta o carte dupa titlu
         public Carte CautaDupaTitlu(string titlu)
