@@ -334,15 +334,15 @@ namespace teorie_incapsulare
         // 5b. Imprumutul cu cea mai mare intarziere
         public imprumut CelMaiIntarziat()
         {
-            imprumut maxim = imprumuturi[0];
+            imprumut max = imprumuturi[0];
             for (int i = 1; i < imprumuturi.Count; i++)
             {
-                if (imprumuturi[i].nrZile > maxim.nrZile)
+                if (imprumuturi[i].nrZile > max.nrZile)
                 {
-                    maxim = imprumuturi[i];
+                    max = imprumuturi[i];
                 }
             }
-            return maxim;
+            return max;
         }
 
     }

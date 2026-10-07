@@ -79,7 +79,7 @@ namespace teorie_incapsulare
 
 
 
-            Console.WriteLine("-----------BIBLIOTECA-----------");
+            Console.WriteLine("-----------BIBLIOTECA----------");
             b.afisareCartiBiblioteca();
             Console.WriteLine(b.CateSubMedie()+" carti sub medie"); 
 
