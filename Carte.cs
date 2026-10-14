@@ -8,84 +8,72 @@ namespace teorie_incapsulare
 {
     internal class Carte
     {
-        public string titlu;
+        public string Titlu;
 
        
-        public Autor autor;
-        public int anAparitie;
-        public int pret;
-        public string disponibila;
+        public Autor Autor;
+         
+       private double pret;
+        public bool Disponibila;
 
-
+        public double Pret
+        {
+            get { return pret; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Pretul trebuie sa fie mai mare ca 0");
+                }
+                pret = value;
+            }
+        }
 
         public string DescriereCarte()
         {
             string text = "";
-            text += "Ttitlu " + titlu + "\n";
-            text += "Autor " + autor.nume + "\n";
-            text += "An nastere " + autor.anNastere + "\n";
-            text += "Tara " + autor.tara + "\n";
+            text += "Ttitlu " + Titlu + "\n";
+            text += "Autor " + Autor.nume + "\n";
+            text += "An nastere " + Autor.anNastere + "\n";
+            text += "Tara " + Autor.tara + "\n";
            // text += "An aparitie " + anAparitie + "\n";
-            text += "Pret " + pret +" lei"+" \n";
+            text += "Pret " + Pret +" lei"+" \n";
           //  text += "Disponibila " + disponibila + "\n";
            // text += "Ani de la aparitie " + AnideDeLaAparitie() + "\n";
            // text += "Pret dupa reducere " + reducere(20);
             
              
-
-            return text;
-        }
-
-        //Ex 2
-        public int AnideDeLaAparitie()
-        {
-            return 2026 - anAparitie;
-        }
-        //Ex 3
-        public int reducere(int procent)
-        {
-
-            return pret - pret * procent / 100;
-        }
-        //Ex 4
-        public void ieftinire(int suma)
-        {
-            Console.WriteLine("Inainte " + pret);
-            int pret2 = pret - suma;
-            Console.WriteLine("Dupa " + pret2);
-
-
-        }//diferenta intre ex 3 si ex4:Ex 3 calculeaza si face return,fara sa modifice pretul,iar Ex 4 modifica pretul si se foloseste de void.
-
-        //ex 5
-        public bool veche()
-        {
-            if (AnideDeLaAparitie() > 50)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-//ex 8
-        public string Descrierecarte()
-        {
-            string text = "";
-             
-            text += "Ttitlu " + titlu + "\n";
-            text += "Autor " + autor + "\n";
-            text += "An aparitie " + anAparitie + "\n";
-            text += "Pret " + pret + "\n";
-            text += "Disponibila " + disponibila + "\n";
-             
+ 
 
             return text;
         }
 
         
+         
+        
+        public string Descrierecarte()
+        {
+            string text = "";
+             
+            text += "Ttitlu " + Titlu + "\n";
+            text += "Autor " + Autor + "\n";
+            //text += "An aparitie " + anAparitie + "\n";
+            text += "Pret " + pret + "\n";
+            text += "Disponibila " + Disponibila + "\n";
+             
 
+            return text;
+        }
+
+         
+        public Carte(string titlu,Autor autor, double pret)
+        {
+            this.Titlu = titlu;
+            this.Autor = autor;
+            Pret = pret;
+            Disponibila = true;
+
+        }
     }
 }
      

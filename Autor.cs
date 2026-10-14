@@ -10,6 +10,8 @@ namespace teorie_incapsulare
         public int anNastere;
         public string tara;
 
+
+
         public string DescriereAutor()
         {
             string text = "";
@@ -18,6 +20,13 @@ namespace teorie_incapsulare
             text+= tara +"\n";
             return text;
        }
+
+        public Autor(string nume,int anNastere, string tara)
+        {
+            this.nume = nume;
+            this.anNastere = anNastere;
+            this.tara = tara;
+        }
          
     }
 }
