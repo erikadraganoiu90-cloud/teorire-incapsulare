@@ -22,23 +22,25 @@ namespace teorie_incapsulare
             Console.WriteLine("ce mai faci");
         }
 
-        public Music(int ceva,string alceva)
+         
+        public Music(string title, string artist, MusicGenre genre, int durationSeconds, int releaseYear, bool isFavorite, int playCount)
         {
-            Console.WriteLine("constrcutor cu doi paramterii");
+            Title = title;
+            Artist = artist;
+            Genre = genre;
+            DurationSeconds = durationSeconds;
+            ReleaseYear = releaseYear;
+            this.isFavorite = isFavorite;
+            this.playCount = playCount;
         }
-
-        public Music(string title,string artist,MusicGenre genre,int durationSeconds,int releaseYear,bool isFavorite,int playCount)
+        public Music(string title, string artist, int durationSeconds)
         {
-            Title= title;
-            Artist= artist;
-            Genre= genre;
-            DurationSeconds= durationSeconds;
-            ReleaseYear= releaseYear;
+            Title = title;
+            Artist = artist;
+            DurationSeconds = durationSeconds;
+            Genre = MusicGenre.Other;
+            this.isFavorite = false;
             this.playCount = 0;
-            
-         
-         
-
         }
         public string Title
         {
@@ -117,7 +119,28 @@ namespace teorie_incapsulare
             playCount++;
         }
 
+        // format: "titlu,artist,gen,durataSecunde,anLansare"=>["Bohemian Rhapsody","Queen,]
+        // exemplu: "Bohemian Rhapsody,Queen,Rock,354,1975"
+        public Music(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                throw new ArgumentException("Textul nu poate fi gol.");
+            }
 
+            string[] parti = text.Split(',');
+
+            if (parti.Length != 5)
+            {
+                throw new ArgumentException("Format invalid. Asteptat: titlu,artist,gen,durata,an");
+            }
+
+            Title = parti[0].Trim();
+            Artist = parti[1].Trim();
+            Genre = Enum.Parse<MusicGenre>(parti[2].Trim(), true);
+            DurationSeconds = int.Parse(parti[3].Trim());
+            ReleaseYear = int.Parse(parti[4].Trim());
+        }
 
         internal  MusicGenre Genre
         {
@@ -125,6 +148,26 @@ namespace teorie_incapsulare
             set { genre = value; }
              
         }
+
+
+        public string Duration
+        {
+            get { return durationSeconds / 60 + ":" + durationSeconds % 60; }
+        }
+
+        private int rating = 0;
+
+        public int Rating
+        {
+            get { return rating; }
+            set
+            {
+                if (value < 1 || value > 5)
+                    throw new ArgumentException("Nota trebuie sa fie intre 1 si 5.");
+                rating = value;
+            }
+        }
+
 
 
     }
