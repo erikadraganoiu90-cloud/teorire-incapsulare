@@ -8,14 +8,38 @@ namespace teorie_incapsulare
 {
     internal class Carte
     {
-        public string Titlu;
+        private string titlu;
 
        
-        public Autor Autor;
+        private Autor autor;
          
-       private double pret;
-        public bool Disponibila;
+        private double pret;
+        private bool disponibila;
 
+        public string Titlu
+        {
+            get { return titlu; }
+            set
+            {
+                if (value == null||)
+                {
+                    throw new ArgumentNullException("Titlul nu are voie sa fie gol");
+                }
+                titlu = value;
+            }
+        }
+        public Autor Autor
+        {
+            get { return autor; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Autorul nu are voie sa fie null");
+                }
+                autor = value;
+            }
+        }
         public double Pret
         {
             get { return pret; }
@@ -29,13 +53,17 @@ namespace teorie_incapsulare
             }
         }
 
+        public bool Disponibila
+        {
+            get { return disponibila; }
+        }
         public string DescriereCarte()
         {
             string text = "";
             text += "Ttitlu " + Titlu + "\n";
-            text += "Autor " + Autor.nume + "\n";
-            text += "An nastere " + Autor.anNastere + "\n";
-            text += "Tara " + Autor.tara + "\n";
+            text += "Autor " + Autor.Nume + "\n";
+            text += "An nastere " + Autor.AnNastere + "\n";
+            text += "Tara " + Autor.Tara + "\n";
            // text += "An aparitie " + anAparitie + "\n";
             text += "Pret " + Pret +" lei"+" \n";
           //  text += "Disponibila " + disponibila + "\n";
@@ -47,8 +75,19 @@ namespace teorie_incapsulare
 
             return text;
         }
-
-        
+public void Returneaza()
+        {
+            disponibila = true;
+        }
+        public bool Imprumuta()
+        {
+            if (disponibila == false)
+            {
+                return false;
+            }
+            disponibila = false;
+            return true;
+        }
          
         
         public string Descrierecarte()
@@ -71,7 +110,7 @@ namespace teorie_incapsulare
             this.Titlu = titlu;
             this.Autor = autor;
             Pret = pret;
-            Disponibila = true;
+            disponibila = true;
 
         }
     }

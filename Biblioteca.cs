@@ -21,12 +21,21 @@ namespace teorie_incapsulare
 
         {
 
-            carti.Add(new Carte("Amintiri din copilarie", new Autor("Ion Creanga", 1837, "Romania"), 25));
-
-
-            
-
              
+            carti.Add(new Carte("Scrisoarea III", new Autor("Mihai Eminescu", 1850, "Romania"), 20));
+            carti.Add(new Carte("Dune", new Autor("Frank Herbet", 1920, "SUA"), 45));
+            carti.Add(new Carte("Baltagul", new Autor("Mihail Sadoveanu", 1880, "Romania"), 28));
+            carti.Add(new Carte("Maitreyi", new Autor("Mircea Eliade", 1907, "Romania"), 35));
+            carti.Add(new Carte("Enigma Otiliei", new Autor("George Calinescu", 1899, "Romania"), 40));
+            carti.Add(new Carte("Ion", new Autor("Liviu Rebreanu", 1885, "Romania"), 45));
+            carti.Add(new Carte("Ultima noapte de dragoste, intaia noapte de razboi", new Autor("Camil Petrescu", 1894, "Romania"), 38));
+            carti.Add(new Carte("Morometii", new Autor("Marin Preda", 1922, "Romania"), 50));
+            carti.Add(new Carte("Micul print", new Autor("Antoine de Saint-Exupery", 1900, "Franta"), 22));
+            carti.Add(new Carte("Procesul", new Autor("Franz Kafka", 1883, "Cehia"), 32));
+
+
+
+
 
             imprumut i1 = new imprumut();
             i1.nume = "Maria"; i1.carte = "Ion"; i1.nrZile = 20;
@@ -41,26 +50,7 @@ namespace teorie_incapsulare
 
 
 
-        public Carte CeaMaiScumpaCarte()
-        {
-
-            Carte cartePretMaxim = carti[0];
-
-            for (int i = 1; i < carti.Count; i++)
-            {
-                if (carti[i].Pret > cartePretMaxim.Pret)
-                {
-                    cartePretMaxim = carti[i];
-                }
-
-            }
-
-            return cartePretMaxim;
-
-        }
-
-
-        //functie de afisare carti
+         
 
          
 
